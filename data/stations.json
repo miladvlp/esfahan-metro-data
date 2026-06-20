@@ -1,0 +1,1288 @@
+{
+  "Qods": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Qods",
+    "translations": {
+      "fa": "قدس"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو قدس",
+    "relations": [
+      "Baharestan"
+    ],
+    "address": "اصفهان، ایستگاه مترو قدس",
+    "longitude": "51.603208",
+    "latitude": "32.714839",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Baharestan": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Baharestan",
+    "translations": {
+      "fa": "بهارستان"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو بهارستان",
+    "relations": [
+      "Qods",
+      "Golestan"
+    ],
+    "address": "اصفهان، ایستگاه مترو بهارستان",
+    "longitude": "51.621119",
+    "latitude": "32.714926",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Golestan": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Golestan",
+    "translations": {
+      "fa": "گلستان"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو گلستان",
+    "relations": [
+      "Baharestan",
+      "ShahidMofateh"
+    ],
+    "address": "اصفهان، ایستگاه مترو گلستان",
+    "longitude": "51.635505",
+    "latitude": "32.715806",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "ShahidMofateh": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shahid Mofateh",
+    "translations": {
+      "fa": "شهید مفتح"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو شهید مفتح",
+    "relations": [
+      "Golestan",
+      "ShahidAlikhani"
+    ],
+    "address": "اصفهان، ایستگاه مترو شهید مفتح",
+    "longitude": "51.645374",
+    "latitude": "32.715951",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "ShahidAlikhani": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shahid Alikhani",
+    "translations": {
+      "fa": "شهید علیخانی"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو شهید علیخانی",
+    "relations": [
+      "ShahidMofateh",
+      "Jaber"
+    ],
+    "address": "اصفهان، ایستگاه مترو شهید علیخانی",
+    "longitude": "51.658261",
+    "latitude": "32.714768",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Jaber": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Jaber",
+    "translations": {
+      "fa": "جابر"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو جابر",
+    "relations": [
+      "ShahidAlikhani",
+      "Kaveh"
+    ],
+    "address": "اصفهان، ایستگاه مترو جابر",
+    "longitude": "51.666094",
+    "latitude": "32.70844",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Kaveh": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Kaveh",
+    "translations": {
+      "fa": "کاوه"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو کاوه",
+    "relations": [
+      "Jaber",
+      "ShahidChamran"
+    ],
+    "address": "اصفهان، ایستگاه مترو کاوه",
+    "longitude": "51.672467",
+    "latitude": "32.698656",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "ShahidChamran": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shahid Chamran",
+    "translations": {
+      "fa": "شهید چمران"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو شهید چمران",
+    "relations": [
+      "Kaveh",
+      "ShahidBahonar"
+    ],
+    "address": "اصفهان، ایستگاه مترو شهید چمران",
+    "longitude": "51.674016",
+    "latitude": "32.692648",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "ShahidBahonar": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shahid Bahonar",
+    "translations": {
+      "fa": "شهید باهنر"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو شهید باهنر",
+    "relations": [
+      "ShahidChamran",
+      "Shohada"
+    ],
+    "address": "اصفهان، ایستگاه مترو شهید باهنر",
+    "longitude": "51.672181",
+    "latitude": "32.679047",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Shohada": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shohada",
+    "translations": {
+      "fa": "شهدا"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو شهدا",
+    "relations": [
+      "ShahidBahonar",
+      "Takhti"
+    ],
+    "address": "اصفهان، ایستگاه مترو شهدا",
+    "longitude": "51.671226",
+    "latitude": "32.67198",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Takhti": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Takhti",
+    "translations": {
+      "fa": "تختی"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو تختی",
+    "relations": [
+      "Shohada",
+      "ImamHossein"
+    ],
+    "address": "اصفهان، ایستگاه مترو تختی",
+    "longitude": "51.670329",
+    "latitude": "32.665385",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "ImamHossein": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Imam Hossein",
+    "translations": {
+      "fa": "امام حسین"
+    },
+    "lines": [
+      1,
+      2
+    ],
+    "colors": [
+      "#E0001F",
+      "#0072BC"
+    ],
+    "status": "active_interchange",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو امام حسین",
+    "relations": [
+      "Takhti",
+      "Enqelab",
+      "Falestin"
+    ],
+    "address": "اصفهان، ایستگاه مترو امام حسین",
+    "longitude": "51.669345",
+    "latitude": "32.658118",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Enqelab": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Enqelab",
+    "translations": {
+      "fa": "انقلاب"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو انقلاب",
+    "relations": [
+      "ImamHossein",
+      "SiOSePol"
+    ],
+    "address": "اصفهان، ایستگاه مترو انقلاب",
+    "longitude": "51.667929",
+    "latitude": "32.647713",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "SiOSePol": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Si-o-se Pol",
+    "translations": {
+      "fa": "سی‌وسه پل"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو سی و سه پل",
+    "relations": [
+      "Enqelab",
+      "Shariati"
+    ],
+    "address": "اصفهان، ایستگاه مترو سی و سه پل",
+    "longitude": "51.667077",
+    "latitude": "32.641449",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Shariati": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shariati",
+    "translations": {
+      "fa": "شریعتی"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو شریعتی",
+    "relations": [
+      "SiOSePol",
+      "Azadi"
+    ],
+    "address": "اصفهان، ایستگاه مترو شریعتی",
+    "longitude": "51.665493",
+    "latitude": "32.629427",
+    "coordinateSource": "google_places_verified",
+    "coordinateVerified": true
+  },
+  "Azadi": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Azadi",
+    "translations": {
+      "fa": "آزادی"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، میدان آزادی، ایستگاه مترو آزادی",
+    "relations": [
+      "Shariati",
+      "DaneshgahEsfahan"
+    ],
+    "address": "اصفهان، میدان آزادی، ایستگاه مترو آزادی",
+    "longitude": "51.664459",
+    "latitude": "32.622171",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "DaneshgahEsfahan": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Daneshgah-e Esfahan",
+    "translations": {
+      "fa": "دانشگاه اصفهان"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو دانشگاه اصفهان",
+    "relations": [
+      "Azadi",
+      "Kargar"
+    ],
+    "address": "اصفهان، ایستگاه مترو دانشگاه اصفهان",
+    "longitude": "51.663573",
+    "latitude": "32.615692",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "Kargar": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Kargar",
+    "translations": {
+      "fa": "کارگر"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو کارگر",
+    "relations": [
+      "DaneshgahEsfahan",
+      "KuyeEmam"
+    ],
+    "address": "اصفهان، ایستگاه مترو کارگر",
+    "longitude": "51.662927",
+    "latitude": "32.607504",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "KuyeEmam": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Kuy-e Emam",
+    "translations": {
+      "fa": "کوی امام"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو کوی امام",
+    "relations": [
+      "Kargar",
+      "DefaeMoqaddas"
+    ],
+    "address": "اصفهان، ایستگاه مترو کوی امام",
+    "longitude": "51.667139",
+    "latitude": "32.60057",
+    "coordinateSource": "metrolinehub/osm",
+    "coordinateVerified": true
+  },
+  "DefaeMoqaddas": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Defa-e Moqaddas",
+    "translations": {
+      "fa": "دفاع مقدس"
+    },
+    "lines": [
+      1
+    ],
+    "colors": [
+      "#E0001F"
+    ],
+    "status": "active",
+    "isOperational": true,
+    "geocodeAddress": "اصفهان، ایستگاه مترو دفاع مقدس",
+    "relations": [
+      "KuyeEmam"
+    ],
+    "address": "اصفهان، ایستگاه مترو دفاع مقدس",
+    "longitude": "51.669948",
+    "latitude": "32.588378",
+    "coordinateSource": "google_places_verified",
+    "coordinateVerified": true
+  },
+  "Dark": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Dark",
+    "translations": {
+      "fa": "دارک / شهید غفاری"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، شهرک امام حسین، خیابان زینبیه بین امام حسین و سرو",
+    "relations": [
+      "HaramZeinabieh"
+    ],
+    "address": "اصفهان، شهرک امام حسین، خیابان زینبیه بین امام حسین و سرو",
+    "longitude": "51.73523084976145",
+    "latitude": "32.72531964980408",
+    "coordinateSource": "neshan_geocoding_api_unverified_google_maps",
+    "coordinateVerified": false
+  },
+  "HaramZeinabieh": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Haram Zeinabieh",
+    "translations": {
+      "fa": "حرم زینبیه"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، زینبیه، خیابان زینبیه بین آیت‌الله سعیدی و شهید مفتح",
+    "relations": [
+      "AsheghEsfahani",
+      "Dark"
+    ],
+    "address": "اصفهان، زینبیه، خیابان زینبیه بین آیت‌الله سعیدی و شهید مفتح",
+    "longitude": "51.727567953841834",
+    "latitude": "32.71144977989678",
+    "coordinateSource": "neshan_geocoding_api_unverified_google_maps",
+    "coordinateVerified": false
+  },
+  "AsheghEsfahani": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Ashegh Esfahani",
+    "translations": {
+      "fa": "عاشق اصفهانی"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، عمان سامانی، خیابان زینبیه",
+    "relations": [
+      "OmanSamani",
+      "HaramZeinabieh"
+    ],
+    "address": "اصفهان، عمان سامانی، خیابان زینبیه",
+    "longitude": "51.723403",
+    "latitude": "32.708753",
+    "coordinateSource": "google_places_verified",
+    "coordinateVerified": true
+  },
+  "OmanSamani": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Oman Samani",
+    "translations": {
+      "fa": "عمان سامانی"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، سودان زینبیه، خیابان زینبیه، خیابان افشاری",
+    "relations": [
+      "Shahed",
+      "AsheghEsfahani"
+    ],
+    "address": "اصفهان، سودان زینبیه، خیابان زینبیه، خیابان افشاری",
+    "longitude": "51.70841904625295",
+    "latitude": "32.70220238327486",
+    "coordinateSource": "neshan_geocoding_api_unverified_google_maps",
+    "coordinateVerified": false
+  },
+  "Shahed": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shahed",
+    "translations": {
+      "fa": "شاهد"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، طوقچی، بلوار لاله جنوبی",
+    "relations": [
+      "OmanSamani",
+      "Falestin"
+    ],
+    "address": "اصفهان، طوقچی، بلوار لاله جنوبی",
+    "longitude": "51.692251",
+    "latitude": "32.684763",
+    "coordinateSource": "google_places_verified",
+    "coordinateVerified": true
+  },
+  "Falestin": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Falestin",
+    "translations": {
+      "fa": "فلسطین"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، چرخاب، خیابان باغ گلدسته، خیابان آمادگاه",
+    "relations": [
+      "Shahed",
+      "ImamHossein"
+    ],
+    "address": "اصفهان، چرخاب، خیابان باغ گلدسته، خیابان آمادگاه",
+    "longitude": "51.6688738",
+    "latitude": "32.65091459999999",
+    "coordinateSource": "neshan_geocoding_api_unverified_google_maps",
+    "coordinateVerified": false
+  },
+  "Kohandej": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Kohandej",
+    "translations": {
+      "fa": "کهندژ"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، بازوگاه، خیابان احمد حجازی",
+    "relations": [
+      "ShahidKharazi"
+    ],
+    "address": "اصفهان، بازوگاه، خیابان احمد حجازی",
+    "longitude": "51.638875",
+    "latitude": "32.663883",
+    "coordinateSource": "google_places_verified",
+    "coordinateVerified": true
+  },
+  "ShahidKharazi": {
+    "disabled": null,
+    "wc": null,
+    "coffeeShop": null,
+    "groceryStore": null,
+    "fastFood": null,
+    "atm": null,
+    "elevator": null,
+    "bicycleParking": null,
+    "waterCooler": null,
+    "cleanFood": null,
+    "blindPath": null,
+    "fireSuppressionSystem": null,
+    "fireExtinguisher": null,
+    "metroPolice": null,
+    "creditTicketSales": null,
+    "waitingChair": null,
+    "camera": null,
+    "trashCan": null,
+    "smoking": false,
+    "petsAllowed": false,
+    "freeWifi": null,
+    "prayerRoom": null,
+    "name": "Shahid Kharazi",
+    "translations": {
+      "fa": "شهید خرازی"
+    },
+    "lines": [
+      2
+    ],
+    "colors": [
+      "#0072BC"
+    ],
+    "status": "under_construction",
+    "isOperational": false,
+    "geocodeAddress": "اصفهان، الیادران، کنارگذر خرازی، خیابان صاحب روضت",
+    "relations": [
+      "Kohandej"
+    ],
+    "address": "اصفهان، الیادران، کنارگذر خرازی، خیابان صاحب روضت",
+    "longitude": "51.6437191",
+    "latitude": "32.6595887",
+    "coordinateSource": "neshan_geocoding_api_unverified_google_maps",
+    "coordinateVerified": false
+  }
+}

@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="نمایش تعاملی ایستگاه‌ها و خطوط متروی اصفهان" />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <title>شبکه متروی اصفهان</title>
+  <style>
+    :root {
+      --ink: #15243b;
+      --muted: #607089;
+      --paper: #f7f9fc;
+      --surface: rgba(255, 255, 255, 0.92);
+      --border: #dbe3ee;
+      --line-1: #e0001f;
+      --line-2: #0072bc;
+      --shadow: 0 12px 36px rgba(21, 36, 59, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { width: 100%; height: 100%; margin: 0; }
+
+    body {
+      overflow: hidden;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(rgba(21, 36, 59, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21, 36, 59, 0.045) 1px, transparent 1px);
+      background-size: 32px 32px;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    button, input { font: inherit; }
+
+    .graph-wrapper { width: 100%; height: 100%; }
+    .graph-wrapper svg { width: 100%; height: 100%; }
+
+    .topbar {
+      position: fixed;
+      inset: 18px 18px auto;
+      z-index: 5;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      pointer-events: none;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      pointer-events: auto;
+    }
+
+    .title-card {
+      position: relative;
+      min-width: 270px;
+      padding: 16px 18px 15px 24px;
+      overflow: hidden;
+    }
+
+    .title-card::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: linear-gradient(to bottom, var(--line-1) 0 50%, var(--line-2) 50% 100%);
+      content: "";
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .title-card h1 { margin: 0; font-size: 20px; font-weight: 800; line-height: 1.5; }
+    .title-card p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+
+    .search-panel { width: min(390px, 47vw); padding: 9px; }
+
+    .search-box {
+      width: 100%;
+      height: 46px;
+      padding: 0 15px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      outline: none;
+      color: var(--ink);
+      background: #f2f5f9;
+      transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .search-box:focus {
+      border-color: var(--line-2);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(0, 114, 188, 0.14);
+    }
+
+    .search-box:disabled { cursor: wait; opacity: 0.65; }
+
+    .search-results {
+      display: none;
+      max-height: min(360px, 55vh);
+      margin-top: 7px;
+      overflow: auto;
+      border-top: 1px solid var(--border);
+      padding-top: 4px;
+    }
+
+    .search-item {
+      display: block;
+      width: 100%;
+      padding: 10px 11px;
+      border: 0;
+      border-radius: 8px;
+      color: var(--ink);
+      background: transparent;
+      text-align: right;
+      cursor: pointer;
+      transition: background 140ms ease;
+    }
+
+    .search-item:hover, .search-item:focus-visible { outline: none; background: #eaf1f8; }
+    .search-item[hidden] { display: none; }
+    .search-item small { display: block; margin-top: 2px; color: var(--muted); direction: ltr; text-align: right; }
+
+    .legend {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      z-index: 4;
+      min-width: 230px;
+      padding: 13px 15px;
+      font-size: 12px;
+    }
+
+    .legend-title { margin-bottom: 8px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; }
+    .legend-row { display: flex; align-items: center; gap: 9px; margin: 7px 0; }
+    .marker { width: 13px; height: 13px; flex: none; display: inline-block; }
+    .marker--active { border: 2px solid #fff; border-radius: 50%; background: var(--line-1); box-shadow: 0 0 0 1px var(--line-1); }
+    .marker--building { border: 1px dashed var(--ink); border-radius: 2px; background: var(--line-2); transform: rotate(45deg); }
+    .marker--interchange { border: 3px solid var(--line-2); border-radius: 50%; background: var(--line-1); }
+
+    .dialog {
+      display: none;
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 6;
+      width: min(390px, calc(100vw - 36px));
+      padding: 16px;
+    }
+
+    .dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .dialog-title { margin: 0; font-size: 17px; font-weight: 800; }
+    .dialog-subtitle { display: block; color: var(--muted); direction: ltr; font-size: 12px; text-align: right; }
+    .dialog-body { margin-top: 14px; font-size: 13px; line-height: 1.8; }
+    .detail-row { display: grid; grid-template-columns: 76px 1fr; gap: 8px; padding: 7px 0; border-top: 1px solid #edf1f5; }
+    .detail-row dt { color: var(--muted); font-weight: 500; }
+    .detail-row dd { margin: 0; }
+
+    .close-button {
+      width: 34px;
+      height: 34px;
+      flex: none;
+      border: 0;
+      border-radius: 8px;
+      color: #9d1730;
+      background: #fff0f3;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .close-button:hover, .close-button:focus-visible { outline: 2px solid rgba(224, 0, 31, 0.24); background: #ffe2e8; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 27px;
+      height: 24px;
+      margin-left: 5px;
+      padding: 0 8px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .loading-state {
+      position: fixed;
+      inset: 50% auto auto 50%;
+      z-index: 3;
+      min-width: 220px;
+      padding: 14px 18px;
+      transform: translate(-50%, -50%);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .loading-state[data-error="true"] { color: #9d1730; }
+    .muted { color: var(--muted); }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .no-select { user-select: none; }
+
+    @media (max-width: 720px) {
+      .topbar { inset: 10px 10px auto; flex-direction: column; gap: 8px; }
+      .title-card, .search-panel { width: 100%; min-width: 0; }
+      .title-card { padding-block: 10px; }
+      .title-card h1 { font-size: 17px; }
+      .eyebrow, .title-card p { display: none; }
+      .search-box { height: 42px; }
+      .legend { display: none; }
+      .dialog { right: 10px; bottom: 10px; width: calc(100vw - 20px); max-height: 58vh; overflow: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar no-select">
+    <section class="title-card panel" aria-labelledby="pageTitle">
+      <p class="eyebrow">ESFAHAN · URBAN RAIL</p>
+      <h1 id="pageTitle">شبکه متروی اصفهان</h1>
+      <p id="networkSummary">در حال دریافت اطلاعات شبکه…</p>
+    </section>
+
+    <section class="search-panel panel" role="search">
+      <label class="visually-hidden" for="searchInput">جست‌وجوی ایستگاه</label>
+      <input type="search" id="searchInput" class="search-box" placeholder="جست‌وجوی نام یا خط ایستگاه…" autocomplete="off" aria-controls="searchResults" disabled />
+      <div id="searchResults" class="search-results" role="listbox" aria-label="نتایج جست‌وجو"></div>
+    </section>
+  </header>
+
+  <main class="graph-wrapper no-select" id="graph" aria-label="نمودار تعاملی شبکه متروی اصفهان"></main>
+
+  <aside class="legend panel no-select" aria-label="راهنمای نمودار">
+    <div class="legend-title">راهنمای شبکه</div>
+    <div class="legend-row"><span class="marker marker--active"></span> خط ۱ · فعال</div>
+    <div class="legend-row"><span class="marker marker--building"></span> خط ۲ · در حال ساخت</div>
+    <div class="legend-row"><span class="marker marker--interchange"></span> ایستگاه تقاطعی</div>
+  </aside>
+
+  <aside class="dialog panel" id="stationDialog" role="dialog" aria-modal="false" aria-labelledby="stationTitle">
+    <div class="dialog-header">
+      <div>
+        <h2 class="dialog-title" id="stationTitle"></h2>
+        <span class="dialog-subtitle" id="stationEnglishName"></span>
+      </div>
+      <button class="close-button" id="closeDialogButton" type="button" aria-label="بستن اطلاعات ایستگاه">×</button>
+    </div>
+    <dl class="dialog-body">
+      <div class="detail-row"><dt>خط</dt><dd id="stationLines"></dd></div>
+      <div class="detail-row"><dt>وضعیت</dt><dd id="stationStatus"></dd></div>
+      <div class="detail-row"><dt>آدرس</dt><dd id="stationAddress"></dd></div>
+      <div class="detail-row"><dt>مختصات</dt><dd dir="ltr" id="stationCoordinates"></dd></div>
+      <div class="detail-row"><dt>امکانات</dt><dd id="stationFeatures"></dd></div>
+    </dl>
+  </aside>
+
+  <div class="loading-state panel" id="loadingState" role="status" aria-live="polite">در حال دریافت اطلاعات ایستگاه‌ها…</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivagraphjs/0.12.0/vivagraph.min.js" integrity="sha512-gkKEgYqs7I24YHETln6iLyd9Oy10s2Cyaev28dxbCQa3mV22SbdDsWrprpRL/DSAJERZiFiQcN+wnsxPKR6Trw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    "use strict";
+
+    const DATA_URL = "../data/stations.json";
+    const nodeSize = 26;
+    let stations = {};
+
+    const elements = {
+      closeDialogButton: document.getElementById("closeDialogButton"),
+      dialog: document.getElementById("stationDialog"),
+      graph: document.getElementById("graph"),
+      loadingState: document.getElementById("loadingState"),
+      networkSummary: document.getElementById("networkSummary"),
+      searchInput: document.getElementById("searchInput"),
+      searchResults: document.getElementById("searchResults"),
+      stationAddress: document.getElementById("stationAddress"),
+      stationCoordinates: document.getElementById("stationCoordinates"),
+      stationEnglishName: document.getElementById("stationEnglishName"),
+      stationFeatures: document.getElementById("stationFeatures"),
+      stationLines: document.getElementById("stationLines"),
+      stationStatus: document.getElementById("stationStatus"),
+      stationTitle: document.getElementById("stationTitle")
+    };
+
+    function stationLabel(station) {
+      return station?.translations?.fa || station?.name || "ایستگاه بدون نام";
+    }
+
+    function statusText(status) {
+      return ({
+        active: "فعال",
+        active_interchange: "فعال · تقاطعی",
+        under_construction: "در حال ساخت"
+      })[status] || status || "نامشخص";
+    }
+
+    function closeSearch() {
+      elements.searchResults.style.display = "none";
+    }
+
+    function closeDialog() {
+      elements.dialog.style.display = "none";
+    }
+
+    function renderLineBadges(station) {
+      elements.stationLines.replaceChildren();
+      (station.lines || []).forEach((line, index) => {
+        const badge = document.createElement("span");
+        badge.className = "badge";
+        badge.style.backgroundColor = station.colors?.[index] || station.colors?.[0] || "#334155";
+        badge.textContent = line;
+        elements.stationLines.appendChild(badge);
+      });
+    }
+
+    function showStation(station) {
+      closeSearch();
+      elements.stationTitle.textContent = stationLabel(station);
+      elements.stationEnglishName.textContent = station.name || "—";
+      elements.stationStatus.textContent = statusText(station.status);
+      elements.stationAddress.textContent = station.address || "ثبت نشده";
+      elements.stationCoordinates.textContent = `${station.latitude || "—"}, ${station.longitude || "—"}`;
+      renderLineBadges(station);
+
+      const features = [
+        ["wc", "سرویس بهداشتی"], ["fastFood", "غذا"], ["groceryStore", "فروشگاه"],
+        ["atm", "خودپرداز"], ["coffeeShop", "کافی‌شاپ"], ["elevator", "آسانسور"],
+        ["metroPolice", "پلیس مترو"], ["creditTicketSales", "فروش بلیت"]
+      ].filter(([key]) => station[key]).map(([, label]) => label);
+      elements.stationFeatures.textContent = features.length ? features.join("، ") : "اطلاعاتی ثبت نشده";
+      elements.stationFeatures.classList.toggle("muted", !features.length);
+      elements.dialog.style.display = "block";
+    }
+
+    function buildSearchIndex() {
+      const fragment = document.createDocumentFragment();
+      Object.entries(stations).forEach(([key, station]) => {
+        const button = document.createElement("button");
+        const englishName = document.createElement("small");
+        button.type = "button";
+        button.className = "search-item";
+        button.dataset.key = key;
+        button.dataset.search = [stationLabel(station), station.name, station.address, ...(station.lines || [])].join(" ").toLocaleLowerCase("fa");
+        button.textContent = stationLabel(station);
+        englishName.textContent = station.name || "";
+        button.appendChild(englishName);
+        button.addEventListener("click", () => showStation(station));
+        fragment.appendChild(button);
+      });
+      elements.searchResults.appendChild(fragment);
+    }
+
+    function searchStations() {
+      closeDialog();
+      const query = elements.searchInput.value.trim().toLocaleLowerCase("fa");
+      let visibleCount = 0;
+
+      elements.searchResults.querySelectorAll(".search-item").forEach((item) => {
+        const matches = Boolean(query) && item.dataset.search.includes(query);
+        item.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+      elements.searchResults.style.display = visibleCount ? "block" : "none";
+    }
+
+    function buildNode(node) {
+      const station = node.data;
+      const ui = Viva.Graph.svg("g").attr("cursor", "pointer");
+      const isUnderConstruction = station.status === "under_construction";
+      const primaryColor = station.colors?.[0] || "#15243b";
+      const secondaryColor = station.colors?.[1];
+
+      ui.on("click", () => showStation(station));
+
+      if (secondaryColor) {
+        ui.append(Viva.Graph.svg("circle").attr("cx", "13px").attr("cy", "15px").attr("r", "11px").attr("fill", secondaryColor));
+      }
+
+      if (isUnderConstruction) {
+        ui.append(Viva.Graph.svg("rect")
+          .attr("width", "14px").attr("height", "14px").attr("x", "6px").attr("y", "8px").attr("rx", "2px")
+          .attr("transform", "rotate(45 13 15)").attr("fill", primaryColor).attr("stroke", "#15243b")
+          .attr("stroke-width", "1.5").attr("stroke-dasharray", "3 2"));
+      } else {
+        ui.append(Viva.Graph.svg("circle")
+          .attr("cx", "13px").attr("cy", "15px").attr("r", "7px")
+          .attr("fill", primaryColor).attr("stroke", "#fff").attr("stroke-width", "2"));
+      }
+
+      ui.append(Viva.Graph.svg("text")
+        .attr("x", "13px").attr("y", "-16px").attr("font-size", "9px")
+        .attr("font-family", "Vazirmatn, sans-serif").attr("fill", "#607089")
+        .attr("text-anchor", "middle").text(station.name || ""));
+      ui.append(Viva.Graph.svg("text")
+        .attr("x", "13px").attr("y", "-3px").attr("font-size", "11px").attr("font-weight", "800")
+        .attr("font-family", "Vazirmatn, sans-serif").attr("fill", "#15243b")
+        .attr("text-anchor", "middle").text(stationLabel(station)));
+      return ui;
+    }
+
+    function renderGraph() {
+      const graph = Viva.Graph.graph();
+      const graphics = Viva.Graph.View.svgGraphics();
+      const addedLinks = new Set();
+
+      Object.entries(stations).forEach(([key, station]) => {
+        graph.addNode(key, station);
+        (station.relations || []).forEach((relatedKey) => {
+          if (!stations[relatedKey]) return;
+          const linkKey = [key, relatedKey].sort().join("--");
+          if (addedLinks.has(linkKey)) return;
+          addedLinks.add(linkKey);
+          graph.addLink(key, relatedKey);
+        });
+      });
+
+      graphics.node(buildNode);
+      graphics.link((link) => {
+        const from = stations[link.fromId];
+        const to = stations[link.toId];
+        return Viva.Graph.svg("line")
+          .attr("stroke", from?.colors?.[0] || to?.colors?.[0] || "#93a2b5")
+          .attr("stroke-width", "3").attr("stroke-opacity", "0.78");
+      });
+      graphics.placeNode((nodeUI, position) => {
+        nodeUI.attr("transform", `translate(${position.x - nodeSize / 2},${position.y - nodeSize / 2})`);
+      });
+
+      const layout = Viva.Graph.Layout.forceDirected(graph, {
+        springLength: 64,
+        springCoeff: 0.0008,
+        dragCoeff: 0.018,
+        gravity: -8
+      });
+      Viva.Graph.View.renderer(graph, { layout, graphics, container: elements.graph }).run();
+    }
+
+    async function init() {
+      try {
+        const response = await fetch(DATA_URL);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        stations = await response.json();
+        if (!stations || Array.isArray(stations) || !Object.keys(stations).length) throw new Error("Invalid or empty station data");
+
+        const values = Object.values(stations);
+        const activeCount = values.filter((station) => station.isOperational).length;
+        elements.networkSummary.textContent = `${values.length} ایستگاه · ${activeCount} فعال · خطوط ۱ و ۲`;
+        buildSearchIndex();
+        renderGraph();
+        elements.searchInput.disabled = false;
+        elements.loadingState.remove();
+      } catch (error) {
+        console.error("Could not load station data:", error);
+        elements.loadingState.dataset.error = "true";
+        elements.loadingState.textContent = "دریافت اطلاعات ناموفق بود. صفحه را با یک وب‌سرور محلی اجرا کنید.";
+        elements.networkSummary.textContent = "اطلاعات شبکه در دسترس نیست";
+      }
+    }
+
+    elements.searchInput.addEventListener("input", searchStations);
+    elements.searchInput.addEventListener("focus", searchStations);
+    elements.closeDialogButton.addEventListener("click", closeDialog);
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".search-panel")) closeSearch();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeSearch();
+        closeDialog();
+      }
+    });
+
+    init();
+  </script>
+</body>
+</html>
